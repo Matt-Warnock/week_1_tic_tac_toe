@@ -51,7 +51,19 @@ public class Board {
                 return true;
             }
         }
-        
+
+        if ("X".equals(board[0]) &&
+                "X".equals(board[4]) &&
+                "X".equals(board[8])) {
+            return true;
+        }
+
+        if ("X".equals(board[2]) &&
+                "X".equals(board[4]) &&
+                "X".equals(board[6])) {
+            return true;
+        }
+
         return false;
     }
 }
