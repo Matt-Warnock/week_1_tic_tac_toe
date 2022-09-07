@@ -1,19 +1,14 @@
 package game;
 
 public class TicTacToe {
+    private final Turn turn = new Turn();
+    private final Board board = new Board();
+
     public String play(int coordinate) {
+        board.set(coordinate - 1, turn.player());
+        turn.add();
 
-        String[] board = new String[] {
-                ".", ".", ".",
-                ".", ".", ".",
-                ".", ".", "."
-        };
 
-        board[coordinate - 1] = "X";
-
-        return board[0] + board[1] + board[2] + "\n" +
-               board[3] + board[4] + board[5] + "\n" +
-               board[6] + board[7] + board[8]
-        ;
+        return board.format();
     }
 }

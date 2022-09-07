@@ -3,6 +3,8 @@ package game;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TicTacToeShould {
@@ -32,5 +34,14 @@ public class TicTacToeShould {
         String output = "...\n.X.\n...";
 
         assertEquals(output, ticTacToe.play(5));
+    }
+    @Test
+    void displays_x_in_first_0_in_second() {
+        ticTacToe.play(1);
+        String output = "XO.\n...\n...";
+
+        String result = ticTacToe.play(2);
+
+        assertThat(output, is(result));
     }
 }
