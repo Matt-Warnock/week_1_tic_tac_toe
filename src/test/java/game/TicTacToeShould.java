@@ -80,4 +80,16 @@ public class TicTacToeShould {
             ticTacToe.play(1);
         });
     }
+
+    @Test
+    void confirms_player_win_with_first_row() throws Exception {
+        ticTacToe.play(1);
+        ticTacToe.play(4);
+        ticTacToe.play(2);
+        ticTacToe.play(5);
+
+        String result = ticTacToe.play(3);
+
+        assertThat("Player X wins", is(result));
+    }
 }

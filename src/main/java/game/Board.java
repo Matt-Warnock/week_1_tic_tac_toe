@@ -34,4 +34,13 @@ public class Board {
             builder.append(board[rowIndex + j]);
         }
     }
+
+    public boolean hasWon() {
+        if ("X".equals(board[0]) &&
+            "X".equals(board[1]) &&
+            "X".equals(board[2])) {
+            return true;
+        }
+        return false;
+    }
 }
