@@ -43,6 +43,15 @@ public class Board {
                 return true;
             }
         }
+
+        for (int i = 0; i < ROW_SIZE; i++) {
+            if ("X".equals(board[i]) &&
+                    "X".equals(board[i + ROW_SIZE]) &&
+                    "X".equals(board[i + (ROW_SIZE * 2)])) {
+                return true;
+            }
+        }
+        
         return false;
     }
 }
