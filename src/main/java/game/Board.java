@@ -36,10 +36,12 @@ public class Board {
     }
 
     public boolean hasWon() {
-        if ("X".equals(board[0]) &&
-            "X".equals(board[1]) &&
-            "X".equals(board[2])) {
-            return true;
+        for (int i = 0; i < BOARD_SIZE; i = i + ROW_SIZE) {
+            if ("X".equals(board[i]) &&
+                    "X".equals(board[i + 1]) &&
+                    "X".equals(board[i + 2])) {
+                return true;
+            }
         }
         return false;
     }

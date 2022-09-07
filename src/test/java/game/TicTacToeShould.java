@@ -92,4 +92,28 @@ public class TicTacToeShould {
 
         assertThat("Player X wins", is(result));
     }
+
+    @Test
+    void confirms_player_win_with_second_row() throws Exception {
+        ticTacToe.play(5);
+        ticTacToe.play(1);
+        ticTacToe.play(4);
+        ticTacToe.play(2);
+
+        String result = ticTacToe.play(6);
+
+        assertThat("Player X wins", is(result));
+    }
+    @Test
+    void confirms_player_win_with_third_row() throws Exception {
+        ticTacToe.play(8);
+        ticTacToe.play(1);
+        ticTacToe.play(7);
+        ticTacToe.play(2);
+
+        String result = ticTacToe.play(9);
+
+        assertThat("Player X wins", is(result));
+    }
+
 }
