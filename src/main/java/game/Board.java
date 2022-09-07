@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Arrays;
+
 public class Board {
     private String[] board = new String[] {
             ".", ".", ".",
@@ -12,8 +14,13 @@ public class Board {
     }
 
     public String format() {
-        return  board[0] + board[1] + board[2] + "\n" +
-                board[3] + board[4] + board[5] + "\n" +
-                board[6] + board[7] + board[8];
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < 9; i = i + 3) {
+            builder.append(board[i]);
+            builder.append(board[i + 1]);
+            builder.append(board[i + 2]);
+            builder.append("\n");
+        }
+        return builder.toString();
     }
 }

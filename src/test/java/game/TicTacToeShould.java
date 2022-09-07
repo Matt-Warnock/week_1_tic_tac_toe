@@ -17,28 +17,28 @@ public class TicTacToeShould {
 
     @Test
     void displays_x_in_first_position() {
-        String output = "X..\n...\n...";
+        String output = "X..\n...\n...\n";
 
         assertEquals(output, ticTacToe.play(1));
     }
 
     @Test
     void displays_x_in_third_position() {
-        String output = "..X\n...\n...";
+        String output = "..X\n...\n...\n";
 
         assertEquals(output, ticTacToe.play(3));
     }
 
     @Test
     void displays_x_in_fifth_position() {
-        String output = "...\n.X.\n...";
+        String output = "...\n.X.\n...\n";
 
         assertEquals(output, ticTacToe.play(5));
     }
     @Test
     void displays_x_in_first_0_in_second() {
         ticTacToe.play(1);
-        String output = "XO.\n...\n...";
+        String output = "XO.\n...\n...\n";
 
         String result = ticTacToe.play(2);
 
@@ -49,7 +49,7 @@ public class TicTacToeShould {
         ticTacToe.play(1);
         ticTacToe.play(2);
         ticTacToe.play(5);
-        String output = "XO.\n.X.\n..O";
+        String output = "XO.\n.X.\n..O\n";
 
         String result = ticTacToe.play(9);
 

@@ -1,6 +1,9 @@
 package game;
 
 public class Turn {
+
+    public static final String FIRST_PLAYER = "X";
+    public static final String SECOND_PLAYER = "O";
     private int turn = 0;
 
     public void add() {
@@ -8,10 +11,6 @@ public class Turn {
     }
 
     public String player() {
-        if (turn % 2 != 0) {
-            return "O";
-        }
-
-        return "X";
+        return turn % 2 == 0 ? FIRST_PLAYER : SECOND_PLAYER;
     }
 }
