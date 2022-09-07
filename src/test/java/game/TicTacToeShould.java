@@ -44,4 +44,15 @@ public class TicTacToeShould {
 
         assertThat(output, is(result));
     }
+    @Test
+    void displays_4_plays() {
+        ticTacToe.play(1);
+        ticTacToe.play(2);
+        ticTacToe.play(5);
+        String output = "XO.\n.X.\n..O";
+
+        String result = ticTacToe.play(9);
+
+        assertThat(output, is(result));
+    }
 }

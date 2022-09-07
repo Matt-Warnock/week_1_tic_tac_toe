@@ -8,7 +8,7 @@ public class Turn {
     }
 
     public String player() {
-        if (turn == 1) {
+        if (turn % 2 != 0) {
             return "O";
         }
 
