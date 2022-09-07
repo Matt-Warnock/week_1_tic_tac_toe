@@ -13,7 +13,10 @@ public class Board {
         Arrays.fill(board, EMPTY_SPACE);
     }
 
-    public void set(int coordinate, String player) {
+    public void set(int coordinate, String player) throws DuplicatePlayException {
+        if (!EMPTY_SPACE.equals(board[coordinate])) {
+            throw new DuplicatePlayException();
+        }
         board[coordinate] = player;
     }
 
