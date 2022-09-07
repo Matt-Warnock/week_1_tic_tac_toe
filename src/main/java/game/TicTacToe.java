@@ -6,11 +6,13 @@ public class TicTacToe {
 
     public String play(int coordinate) throws DuplicatePlayException {
 
-        board.set(coordinate - 1, turn.player());
+        Player player = turn.player();
+
+        board.set(coordinate - 1, player);
         turn.add();
 
         if (board.hasWon()) {
-            return "Player X wins";
+            return player.declarateWin();
         }
 
         return board.format();
