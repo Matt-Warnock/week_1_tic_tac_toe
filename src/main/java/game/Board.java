@@ -36,34 +36,34 @@ public class Board {
     }
 
     public boolean hasWon() {
-        for (int i = 0; i < BOARD_SIZE; i = i + ROW_SIZE) {
-            if ("X".equals(board[i]) &&
-                    "X".equals(board[i + 1]) &&
-                    "X".equals(board[i + 2])) {
-                return true;
-            }
-        }
+        return checkRows() || checkColumns() || checkDiagonals();
+    }
 
+    private boolean checkDiagonals() {
+        return checkGroup(0, 4, 8) || checkGroup(2, 4, 6);
+    }
+
+    private boolean checkColumns() {
         for (int i = 0; i < ROW_SIZE; i++) {
-            if ("X".equals(board[i]) &&
-                    "X".equals(board[i + ROW_SIZE]) &&
-                    "X".equals(board[i + (ROW_SIZE * 2)])) {
+            if (checkGroup(i, i + ROW_SIZE, i + (ROW_SIZE * 2))) {
                 return true;
             }
         }
-
-        if ("X".equals(board[0]) &&
-                "X".equals(board[4]) &&
-                "X".equals(board[8])) {
-            return true;
-        }
-
-        if ("X".equals(board[2]) &&
-                "X".equals(board[4]) &&
-                "X".equals(board[6])) {
-            return true;
-        }
-
         return false;
+    }
+
+    private boolean checkRows() {
+        for (int i = 0; i < BOARD_SIZE; i = i + ROW_SIZE) {
+            if (checkGroup(i, i + 1, i + 2)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean checkGroup(int index1, int index2, int index3) {
+        return  "X".equals(board[index1]) &&
+                "X".equals(board[index2]) &&
+                "X".equals(board[index3]);
     }
 }
